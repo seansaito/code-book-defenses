@@ -1,0 +1,20 @@
+{
+  "train": true,
+  "test": true,
+  "model_type": "DenseNet",
+  "batch_size": 50,
+  "latent_dim": 128,
+  "growth_rate": 12,
+  "depth": 40,
+  "target_type": "random",
+  "dataset": "MNIST",
+  "total_blocks": 3,
+  "keep_prob": 0.8,
+  "weight_decay": 7e-5,
+  "nesterov_momentum": 0.9,
+  "reduction": 0.5,
+  "should_save_logs": true,
+  "should_save_model": true,
+  "renew_logs": true,
+  "n_epochs": 300
+}

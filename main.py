@@ -25,9 +25,9 @@ if __name__ == '__main__':
     start = time.time()
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, required=True, help='Path to configuration file')
-    parser.add_argument('--gpus', type=str, required=True,
-                        help='GPUs to run on separated by commas (e.g. --gpu=0,1,2)')
-    parser.add_argument('--experiment', type=str, required=True, default='default',
+    parser.add_argument('--gpus', type=str, required=False,
+                        help='GPUs to run on separated by commas (e.g. --gpu=0)')
+    parser.add_argument('--experiment', type=str, required=False, default='default',
                         help='Experiment name')
 
     args = parser.parse_args()

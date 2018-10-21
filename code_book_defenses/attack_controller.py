@@ -149,10 +149,6 @@ def attack_and_save(model, attack, attack_name, test_images, test_labels, datase
 
     adv_accuracy = accuracy_score(adv_preds, labels)
     logger.info('Test accuracy on adversarial data: {:.4f}'.format(adv_accuracy))
-    if targeted:
-        adv_labels = np.argmax(target_labels, axis=1)
-        logger.info("Success rate of attacks: {:.4f}".format(accuracy_score(adv_preds, adv_labels)))
-
     logger.info('Saving adversarial images to {}'.format(attack_images_file_name))
     logger.info('Saving adversarial images labels to {}'.format(attack_images_labels_file_name))
 
@@ -160,11 +156,11 @@ def attack_and_save(model, attack, attack_name, test_images, test_labels, datase
     np.save(attack_images_labels_file_name, test_labels)
 
     if targeted:
+        adv_labels = np.argmax(target_labels, axis=1)
+        logger.info("Success rate of attacks: {:.4f}".format(accuracy_score(adv_preds, adv_labels)))
         logger.info('Saving adversarial image targets to {}'.format(
             attack_images_targeted_labels_file_name))
         np.save(attack_images_targeted_labels_file_name, adv_labels)
-
-    if targeted:
         return (adv_accuracy, accuracy_score(adv_preds, adv_labels))
     else:
         return adv_accuracy

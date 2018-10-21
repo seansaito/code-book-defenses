@@ -21,7 +21,7 @@ from code_book_defenses.config import codebook_to_loss_fn, attack_name_to_params
     targeted_attacks, untargeted_attacks, NUMBER_OF_ATTACK_EXAMPLES, \
     attack_name_to_configurable_param, \
     attack_name_prefix, attack_to_prefix_template
-from code_book_defenses.constants import PATHS, ATTACKS, LOSSES, TARGET_TYPES
+from code_book_defenses.constants import PATHS, ATTACKS, LOSSES, TARGET_TYPES, DATASETS
 from code_book_defenses.data_providers.utils import get_data_provider_by_name
 from code_book_defenses.models.densenet import DenseNetCleverhans
 from code_book_defenses.utils import get_train_params_by_name
@@ -370,7 +370,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     if not configs['keep_prob']:
-        if configs['dataset'] in ['C10', 'MNIST', 'FMNIST"']:
+        if configs['dataset'] in [DATASETS.C10, DATASETS.MNIST, DATASETS.FMNIST]:
             configs['keep_prob'] = 0.8
         else:
             configs['keep_prob'] = 1.0

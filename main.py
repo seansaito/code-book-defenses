@@ -47,10 +47,7 @@ if __name__ == '__main__':
     configs['gpus'] = gpus
 
     if not configs['keep_prob']:
-        if configs['dataset'] in ['C10', 'MNIST', 'FMNIST"']:
-            configs['keep_prob'] = 0.8
-        else:
-            configs['keep_prob'] = 1.0
+        configs['keep_prob'] = 0.8
     if configs['model_type'] == 'DenseNet':
         configs['bc_mode'] = False
         configs['reduction'] = 1.0
@@ -66,7 +63,7 @@ if __name__ == '__main__':
     train_params = get_train_params_by_name(configs['dataset'])
     train_params['batch_size'] = configs['batch_size']
     train_params['latent_dim'] = configs['latent_dim']
-    train_params['experiment'] = configs['experiment']
+    train_params['experiment'] = experiment
     train_params['target_type'] = configs['target_type']
     try:
         quick_test = configs['quick_test']

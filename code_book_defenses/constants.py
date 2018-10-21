@@ -2,6 +2,11 @@ class LOSSES:
     CE = 'cross_entropy'
     MSE = 'mean_squared_error'
 
+class DATASETS:
+    C10 = 'C10'
+    MNIST = 'MNIST'
+    FMNIST = 'FMNIST'
+
 class ACTIVATIONS:
     SOFTMAX = 'Softmax'
 
@@ -17,6 +22,7 @@ class ATTACKS:
 class PATHS:
     ADVERSARIAL_EXAMPLES = 'adversarial_examples'
     MODEL_SAVE_PATH = 'saves'
+    COMPARISON_RESULTS = 'results'
 
 class TARGET_TYPES:
     ONEHOT_CE = 'onehot_ce'

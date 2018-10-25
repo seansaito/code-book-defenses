@@ -327,7 +327,7 @@ class DenseNetCleverhans(Model):
         elif self.target_type == TARGET_TYPES.ONEHOT_MSE:
             logger.info('Using MSE and softmax')
             self.probs = self.states['probs']
-            self.loss = tf.losses.mean_squared_error(self.centroids_ph, self.proj)
+            self.loss = tf.losses.mean_squared_error(self.centroids_ph, self.probs)
         else:
             logger.info('Using MSE')
             self.loss = tf.losses.mean_squared_error(self.centroids_ph, self.proj)

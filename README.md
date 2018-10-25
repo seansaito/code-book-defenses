@@ -25,7 +25,7 @@ is a list. For each attack during test time, we iterate over each value of the l
 After you have installed the dependencies and identified the configurations you want to run, you can trigger training via the following:
 
 ```bash
-$ python3 main.py --config=run_configs/name_of_config.json --gpus=0 --experiment=experiment_1
+$ python3 main.py --config=configs/name_of_config.json --gpus=0 --experiment=experiment_1
 ```
 
 The arguments for `main.py` are as follows:

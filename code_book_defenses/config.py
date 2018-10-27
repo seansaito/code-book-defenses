@@ -86,15 +86,15 @@ attack_name_to_params = {
         'initial_const': [0.01, 0.1, 1.0, 10.0, 100.0]
     },
     ATTACKS.FGSM: {
-        'eps': list(np.arange(0.0, 0.31, 0.01))
+        'eps': [0.01, 0.05, 0.1, 0.15, 0.2]
     },
     ATTACKS.BIM: {
-        'eps': list(np.arange(0.0, 0.31, 0.01)),
+        'eps': [0.01, 0.05, 0.1, 0.15, 0.2],
         'eps_iter': 0.05,
         'nb_iter': 10 # should be 10
     },
     ATTACKS.MIM: {
-        'eps': list(np.arange(0.0, 0.31, 0.01)),
+        'eps': [0.01, 0.05, 0.1, 0.15, 0.2],
         'eps_iter': 0.06,
         'nb_iter': 10 # should be 10
     },
@@ -110,7 +110,7 @@ attack_name_to_params = {
         'initial_const': [0.01, 0.1, 1.0, 10.0, 100.0]
     },
     ATTACKS.MADRY: {
-        'eps': list(np.arange(0.0, 0.11, 0.01)),
+        'eps': [0.02, 0.04, 0.06, 0.08, 0.1],
         'eps_iter': 0.01,
         'nb_iter': 40 # should be 40
     },

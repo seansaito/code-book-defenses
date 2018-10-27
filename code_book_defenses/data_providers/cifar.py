@@ -204,8 +204,7 @@ class CifarDataProvider(DataProvider):
             with open(fname, 'rb') as f:
                 images_and_labels = pickle.load(f, encoding='latin1')
             images = images_and_labels['data']
-            images = images.reshape(-1, 3, 32, 32)
-            # images = images.swapaxes(1, 3).swapaxes(1, 2)
+            images = np.transpose(images, (0, 3, 1, 2))
             images_res.append(images)
             labels_res.append(images_and_labels[labels_key])
         images_res = np.vstack(images_res)

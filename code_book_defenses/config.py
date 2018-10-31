@@ -1,5 +1,3 @@
-import numpy as np
-
 import code_book_defenses.cleverhans.attacks as attacks
 from code_book_defenses.constants import LOSSES, ATTACKS, TARGET_TYPES
 
@@ -27,7 +25,7 @@ checkpoint_mapping = {
 
 attack_name_prefix = '{targeted_prefix}_{attack_name}_model-{target_type}_experiment-{experiment}'
 
-attack_to_prefix_template ={
+attack_to_prefix_template = {
     ATTACKS.LBFGS: '_binary_search_steps-{binary_search_steps}_max_iterations-{max_iterations}_initial_const-{initial_const}',
     ATTACKS.FGSM: '_eps-{eps}',
     ATTACKS.BIM: '_nb_iter-{nb_iter}_eps-{eps}_eps_iter-{eps_iter}',
@@ -64,7 +62,7 @@ untargeted_attacks = [
     ATTACKS.FGSM,
     ATTACKS.MIM,
     ATTACKS.BIM,
-    ATTACKS.DEEP_FOOL, # An untargeted attack
+    ATTACKS.DEEP_FOOL,  # An untargeted attack
     ATTACKS.MADRY,
 ]
 
@@ -79,8 +77,8 @@ targeted_attacks = [
 
 attack_name_to_params = {
     ATTACKS.CARLINI_WAGNER: {
-        'binary_search_steps': 5, # 5 is better
-        'max_iterations': 1000, # 1000 is best
+        'binary_search_steps': 5,  # 5 is better
+        'max_iterations': 1000,  # 1000 is best
         'learning_rate': 0.01,
         'batch_size': 50,
         'initial_const': [0.01, 0.1, 1.0, 10.0, 100.0]
@@ -91,28 +89,28 @@ attack_name_to_params = {
     ATTACKS.BIM: {
         'eps': [0.01, 0.05, 0.1, 0.15, 0.2],
         'eps_iter': 0.05,
-        'nb_iter': 10 # should be 10
+        'nb_iter': 10  # should be 10
     },
     ATTACKS.MIM: {
         'eps': [0.01, 0.05, 0.1, 0.15, 0.2],
         'eps_iter': 0.06,
-        'nb_iter': 10 # should be 10
+        'nb_iter': 10  # should be 10
     },
     ATTACKS.DEEP_FOOL: {
         'nb_candidate': 10,
         'overshoot': 0.02,
-        'max_iter': [10, 20, 30, 40, 50] # should be 50
+        'max_iter': [10, 20, 30, 40, 50]  # should be 50
     },
     ATTACKS.LBFGS: {
         'batch_size': 50,
-        'binary_search_steps': 5, # 5 is better
-        'max_iterations': 1000, # 1000 is best
+        'binary_search_steps': 5,  # 5 is better
+        'max_iterations': 1000,  # 1000 is best
         'initial_const': [0.01, 0.1, 1.0, 10.0, 100.0]
     },
     ATTACKS.MADRY: {
         'eps': [0.02, 0.04, 0.06, 0.08, 0.1],
         'eps_iter': 0.01,
-        'nb_iter': 40 # should be 40
+        'nb_iter': 40  # should be 40
     },
 }
 

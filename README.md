@@ -21,6 +21,8 @@ dataset to train on, etc.
 * For example, the lists `untargeted_attacks` and `targeted_attacks` indicate which attacks to run on the trained model.
 * The `attack_name_to_params` dictionary enumerates the parameters for each attack. You will notice that at most one field from every attack dictionary
 is a list. For each attack during test time, we iterate over each value of the list to construct adversarial examples.
+* N.B. The Carlini Wagner L2 and L-BFGS attacks take a very long time (> 24 hours) especially for all test data, which is 10,000 images. 
+If you want to run quick experiments, you can set the number of images to a smaller number at the top of `code_book_defenses/config.py`.
 
 After you have installed the dependencies and identified the configurations you want to run, you can trigger training via the following:
 

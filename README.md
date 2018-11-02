@@ -1,7 +1,7 @@
 # code-book-defenses
 Evaluation of adversarial robustness of neural networks that use MSE and code-book target representations
 
-# Setting Up
+# Setting up
 
 We use Python 3.x. Install the dependencies via:
 

@@ -12,7 +12,7 @@ $ pip3 install -r requirements.txt
 Note that we depend on `tensorflow-gpu==1.19.0`. This may not work depending on your system's configurations and library/driver versions (e.g. CUDA, CuDNN).
 Please install the appropriate TensorFlow version.
 
-# Running training & attacking the model
+# Training & attacking a model
 
 * The `main.py` module trains a DenseNet model and runs a number of untargeted and targeted attacks on it during test time.
 * The `JSON` files in `configs/` are the configurations of the DenseNet model. They specify parameters such as architecture of the model,

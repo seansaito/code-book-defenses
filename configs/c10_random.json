@@ -2,7 +2,7 @@
   "train": true,
   "test": true,
   "model_type": "DenseNet",
-  "batch_size": 40,
+  "batch_size": 50,
   "latent_dim": 128,
   "growth_rate": 12,
   "depth": 40,

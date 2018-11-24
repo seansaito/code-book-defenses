@@ -18,6 +18,7 @@ class ATTACKS:
     DEEP_FOOL = 'deep_fool'
     LBFGS = 'lbfgs'
     MADRY = 'madry_et_al'
+    SAITO_ROY = 'saito_roy'
 
 class PATHS:
     ADVERSARIAL_EXAMPLES = 'adversarial_examples'

@@ -9,7 +9,7 @@ Keras-Preprocessing==1.0.5
 Markdown==3.0.1
 numpy==1.15.2
 progressbar2==3.38.0
-protobuf==3.6.1
+protobuf==3.18.3
 python-utils==2.3.0
 PyYAML==3.13
 scikit-learn==0.20.0
